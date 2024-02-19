@@ -31,8 +31,8 @@ const OptionFilter = ({ onClose, onFilter }: IProps) => {
   };
 
   return (
-    <article className="fixed lg:absolutes left-0 top-0 bottom-0 right-0 bg-white flex flex-col">
-      <div className="flex w-full justify-between items-center">
+    <article className="fixed left-0 top-0 bottom-0 right-0 bg-white flex flex-col lg:absolute  lg:top-[52px] lg:bottom-auto z-20 lg:border-2 lg:rounded-lg lg:py-5">
+      <div className="flex w-full justify-between items-center lg:hidden">
         <div className="flex-1">
           <Image
             src="/icons/arrow_left.svg"
@@ -44,7 +44,6 @@ const OptionFilter = ({ onClose, onFilter }: IProps) => {
             onClick={onClose}
           />
         </div>
-
         <h3 className="flex-1 text-center text-base font-semibold">Filter</h3>
         <span className="flex-1" />
       </div>

@@ -1,7 +1,14 @@
+import Image from "next/image";
+
 function Page() {
   return (
-    <div className="hidden lg:block bg-red-200 col-span-3">
-      <h1> Rick y Morty</h1>
+    <div className="hidden lg:grid col-span-3  place-content-center h-full w-full">
+      <Image
+        src="/images/rick_and_morty.png"
+        alt="Rick and Morty"
+        width="500"
+        height="500"
+      />
     </div>
   );
 }

@@ -7,8 +7,8 @@ export default function Layout({
   readonly children: React.ReactNode;
 }) {
   return (
-    <section className="bg-white col-start-1 col-end-6 row-start-1 lg:col-span-3 z-10">
-      <Link className="py-6 px-4 block lg:hidden  w-fit" href="/dashboard">
+    <section className="bg-white col-start-1 col-end-6 row-start-1 lg:col-span-3 z-10 lg:mt-10 lg:mx-24">
+      <Link className="py-6 px-4 block lg:hidden w-fit" href="/dashboard">
         <Image
           src="/icons/arrow_left.svg"
           alt="Return"
@@ -16,7 +16,7 @@ export default function Layout({
           height={24}
         />
       </Link>
-      <article className="px-6">{children}</article>
+      <article className="px-6 h-full">{children}</article>
     </section>
   );
 }
