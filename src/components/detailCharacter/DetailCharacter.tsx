@@ -17,9 +17,9 @@ const DetailCharacter = ({ id }: { id: string }) => {
   const {
     data: { character },
   } = useSuspenseQuery<IResponse>(query, { variables: { id } });
-  const { listCharactersFavoritesProvider } = useContextProvider();
-  const isFavorite = listCharactersFavoritesProvider.some(
-    (characterFavorite) => characterFavorite.id === character.id
+  const { listCharactersIdFavoritesProvider } = useContextProvider();
+  const isFavorite = listCharactersIdFavoritesProvider.some(
+    (id) => id === Number(character.id)
   );
 
   return <CardCharacterDetail {...character} isFavorite={isFavorite} />;

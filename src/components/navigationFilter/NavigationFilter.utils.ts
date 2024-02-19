@@ -2,8 +2,22 @@ import { gql } from "@apollo/client";
 import { ICharacter } from "../detailCharacter/DetailCharacter.utils";
 
 export const query = gql`
-  query getCharacters($page: Int!) {
-    characters(page: $page) {
+  query getCharacters(
+    $page: Int!
+    $filterName: String
+    $filterSpecie: String
+    $filterStatus: String
+    $filterGender: String
+  ) {
+    characters(
+      page: $page
+      filter: {
+        name: $filterName
+        species: $filterSpecie
+        status: $filterStatus
+        gender: $filterGender
+      }
+    ) {
       info {
         count
         pages
@@ -16,7 +30,6 @@ export const query = gql`
         species
         image
         gender
-        species
         type
       }
     }
@@ -38,5 +51,16 @@ export interface IResponse {
 export const getSortedListById = (array: ICharacter[]) => {
   return array.sort(function (a, b) {
     return a.id - b.id;
+  });
+};
+
+export const filterListCharacters = (
+  list: ICharacter[],
+  listComparator: ICharacter[]
+) => {
+  return list.filter((item) => {
+    const encontrado = listComparator.find((elm) => elm.id === item.id);
+
+    return !encontrado;
   });
 };

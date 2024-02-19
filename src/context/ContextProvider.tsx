@@ -1,10 +1,11 @@
 "use client";
-import { ICharacter } from "@/components/detailCharacter/DetailCharacter.utils";
 import { PropsWithChildren, createContext, useContext, useState } from "react";
 
 interface IState {
-  listCharactersFavoritesProvider: ICharacter[];
-  setListCharactersFavoritesProvider(list: ICharacter[]): void;
+  listCharactersIdFavoritesProvider: Number[];
+  setListCharactersIdFavoritesProvider(list: Number[]): void;
+  filterSelectProvider: { [key: string]: string };
+  setFilterSelectProvider: (data: { [key: string]: string }) => void;
 }
 
 const ThemeContext = createContext<IState | null>(null);
@@ -19,14 +20,22 @@ const useContextProvider = (): IState => {
 };
 
 export const ContextProvider = (props: PropsWithChildren) => {
-  const [listCharactersFavoritesProvider, setListCharactersFavoritesProvider] =
-    useState<ICharacter[]>([]);
+  const [
+    listCharactersIdFavoritesProvider,
+    setListCharactersIdFavoritesProvider,
+  ] = useState<Number[]>([]);
+
+  const [filterSelectProvider, setFilterSelectProvider] = useState<{
+    [key: string]: string;
+  }>({});
 
   return (
     <ThemeContext.Provider
       value={{
-        listCharactersFavoritesProvider,
-        setListCharactersFavoritesProvider,
+        listCharactersIdFavoritesProvider,
+        setListCharactersIdFavoritesProvider,
+        filterSelectProvider,
+        setFilterSelectProvider,
       }}
     >
       {props.children}

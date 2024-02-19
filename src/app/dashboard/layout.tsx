@@ -7,7 +7,7 @@ export default function Layout({
 }) {
   return (
     <main className="container mx-auto grid grid-cols-5 grid-rows-1 h-screen">
-      <section className="col-start-1 col-end-6 row-start-1 lg:col-span-2 bg-slate-100 overflow-auto">
+      <section className="col-start-1 col-end-6 row-start-1 lg:col-span-2 bg-white overflow-auto">
         <NavigationFilter />
       </section>
       {children}

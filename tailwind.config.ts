@@ -16,6 +16,12 @@ const config: Config = {
       fontFamily: {
         greycliff: ["Greycliff-CF"],
       },
+      colors: {
+        "primary-100": "#EEE3FF",
+        "primary-600": "#8054C7",
+        "primary-700": "#5A3696",
+        "secondary-600": "#63D838",
+      },
     },
   },
   plugins: [],

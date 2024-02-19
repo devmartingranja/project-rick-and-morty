@@ -2,6 +2,8 @@
 
 // Components
 import CardCharacter from "../ui/cardCharacter/CardCharacter";
+import Search from "../ui/search/Search";
+import ListCharacters from "./components/ListCharacters";
 
 // Hooks
 import useNavigationFilter from "./useNavigationFilter";
@@ -11,58 +13,39 @@ const NavigationFilter = () => {
     loading,
     idCharacterSelected,
     listCharacters,
-    listFavoritesCharacters,
+    handlerSearch,
     handlerAddFavorite,
-    handlerDeleteFavorite,
   } = useNavigationFilter();
+
+  const listFavoritesCharacters = listCharacters.filter(
+    (character) => character.isFavorite
+  );
+  const listNotFavoritesCharacters = listCharacters.filter(
+    (character) => !character.isFavorite
+  );
 
   if (loading) return <p>Loading...</p>;
 
   return (
     <section className="mt-10 mx-6 mb-3 ">
       <h2 className="font-bold text-2xl mb-6 ">Rick and Morty list</h2>
-      <input className="w-full mb-4" type="text" placeholder="Search" />
+      <div className="w-full mb-4">
+        <Search onSearch={handlerSearch} />
+      </div>
 
-      {listFavoritesCharacters.length > 0 && (
-        <>
-          <h3 className="py-4 border-b-2 text-xs font-bold">
-            STARRED CHARACTERS ({listFavoritesCharacters.length})
-          </h3>
-          <article>
-            {listFavoritesCharacters.map((character, id) => (
-              <CardCharacter
-                key={id}
-                {...character}
-                isSelected={
-                  Number(idCharacterSelected) === Number(character.id)
-                }
-                isFavorite
-                onDeleteFavorite={handlerDeleteFavorite}
-              />
-            ))}
-          </article>
-        </>
-      )}
+      <ListCharacters
+        idSelected={Number(idCharacterSelected)}
+        list={listFavoritesCharacters}
+        title=" STARRED CHARACTERS"
+        onAddFavorite={handlerAddFavorite}
+      />
 
-      {listCharacters.length > 0 && (
-        <>
-          <h3 className="py-4 border-b-2 text-xs font-bold">
-            CHARACTERS ({listCharacters.length})
-          </h3>
-          <article>
-            {listCharacters.map((character, id) => (
-              <CardCharacter
-                key={id}
-                {...character}
-                isSelected={
-                  Number(idCharacterSelected) === Number(character.id)
-                }
-                onAddFavorite={handlerAddFavorite}
-              />
-            ))}
-          </article>
-        </>
-      )}
+      <ListCharacters
+        idSelected={Number(idCharacterSelected)}
+        list={listNotFavoritesCharacters}
+        title="CHARACTERS"
+        onAddFavorite={handlerAddFavorite}
+      />
     </section>
   );
 };

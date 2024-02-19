@@ -6,8 +6,7 @@ import Link from "next/link";
 interface IProps extends ICharacter {
   isFavorite?: boolean;
   isSelected?: boolean;
-  onAddFavorite?: (id: number) => void;
-  onDeleteFavorite?: (id: number) => void;
+  onFavorite?: (is: boolean) => void;
 }
 
 const CardCharacter = ({
@@ -17,14 +16,8 @@ const CardCharacter = ({
   species,
   isFavorite = false,
   isSelected = false,
-  onAddFavorite = (id) => {},
-  onDeleteFavorite = (id) => {},
+  onFavorite = (is: boolean) => {},
 }: IProps) => {
-  const handlerFavorite = () => {
-    if (isFavorite) onDeleteFavorite(id);
-    else onAddFavorite(id);
-  };
-
   return (
     <section
       className={`w-full py-4 border-b-2 flex justify-between items-center overflow-hidden ${
@@ -50,7 +43,9 @@ const CardCharacter = ({
         width={24}
         height={24}
         className="cursor-pointer"
-        onClick={handlerFavorite}
+        onClick={() => {
+          onFavorite(!isFavorite);
+        }}
       />
     </section>
   );

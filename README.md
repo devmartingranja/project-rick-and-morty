@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rick and Morty Dashboard
 
-## Getting Started
+Este proyecto es un dashboard construido con Next.js que utiliza la API de Rick and Morty GraphQL para mostrar información sobre los personajes de la serie.
 
-First, run the development server:
+El dashboard tiene dos secciones principales: un listado de personajes con opciones de filtro y un detalle del personaje seleccionado. Además, el diseño es responsivo, adaptándose para dispositivos móviles.
+
+## Instalación
+
+1. Clona este repositorio en tu máquina local:
+
+```bash
+git clone https://github.com/tu-usuario/tu-proyecto.git
+```
+
+2. Accede al directorio del proyecto:
+
+```bash
+git clone https://github.com/tu-usuario/tu-proyecto.git
+```
+
+3. Instala las dependencias utilizando npm o yarn:
+
+```bash
+npm install
+# o
+yarn install
+```
+
+## Ejecución
+
+Una vez que hayas instalado las dependencias, puedes ejecutar el proyecto de la siguiente manera:
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esto iniciará el servidor de desarrollo de Next.js. Abre http://localhost:3000 en tu navegador para ver la aplicación.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Listado de Personajes
 
-## Learn More
+- En el lado izquierdo de la pantalla, encontrarás un listado de personajes de Rick y Morty.
+- Puedes filtrar los personajes por especie, estado y género utilizando los controles de filtro proporcionados.
+- Haz clic en un personaje para ver los detalles en la sección de la derecha.
 
-To learn more about Next.js, take a look at the following resources:
+### Detalle del Personaje
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- En el lado derecho de la pantalla, se muestra el detalle del personaje seleccionado.
+- Se incluye la imagen del personaje, así como información detallada como su nombre, especie, estado y género.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Diseño Adaptativo
 
-## Deploy on Vercel
+El diseño del dashboard es completamente adaptable, lo que significa que se ajusta automáticamente para proporcionar una experiencia de usuario óptima en dispositivos móviles. En dispositivos móviles, el listado de personajes ocupa toda la pantalla y al hacer clic en un personaje, se muestra una vista detallada en pantalla completa.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Requisitos Previos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+Node.js
+# o
+npm o yarn
+```
+
+## Licencia
+
+Este proyecto está bajo la [Licencia MIT](./LICENSE).

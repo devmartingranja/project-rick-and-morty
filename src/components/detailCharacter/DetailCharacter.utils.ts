@@ -25,4 +25,5 @@ export interface ICharacter {
   image: string;
   gender: string;
   status: string;
+  isFavorite?: boolean;
 }
