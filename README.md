@@ -65,4 +65,4 @@ npm o yarn
 
 ## Licencia
 
-Este proyecto está bajo la [Licencia MIT](./LICENSE).
+Este proyecto está bajo la [Licencia MIT](https://choosealicense.com/licenses/mit/).
