@@ -1,11 +1,16 @@
 "use client";
+import { IItemComment } from "@/components/comments/components/ItemComment.utils";
 import { PropsWithChildren, createContext, useContext, useState } from "react";
 
 interface IState {
   listCharactersIdFavoritesProvider: Number[];
   setListCharactersIdFavoritesProvider(list: Number[]): void;
+
   filterSelectProvider: { [key: string]: string };
   setFilterSelectProvider: (data: { [key: string]: string }) => void;
+
+  listCommentsProvider: IItemComment[];
+  setListCommentsProvider(list: IItemComment[]): void;
 }
 
 const ThemeContext = createContext<IState | null>(null);
@@ -29,6 +34,10 @@ export const ContextProvider = (props: PropsWithChildren) => {
     [key: string]: string;
   }>({});
 
+  const [listCommentsProvider, setListCommentsProvider] = useState<
+    IItemComment[]
+  >([]);
+
   return (
     <ThemeContext.Provider
       value={{
@@ -36,6 +45,8 @@ export const ContextProvider = (props: PropsWithChildren) => {
         setListCharactersIdFavoritesProvider,
         filterSelectProvider,
         setFilterSelectProvider,
+        listCommentsProvider,
+        setListCommentsProvider,
       }}
     >
       {props.children}
