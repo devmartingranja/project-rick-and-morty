@@ -1,8 +1,13 @@
-import Image from "next/image";
-import ItemFilter from "../itemFilter/ItemFilter";
-import useOptionFilter from "./useOptionFilter";
-import useContextProvider from "@/context/ContextProvider";
+// Libs
 import { useEffect } from "react";
+import Image from "next/image";
+
+// Components
+import ItemFilter from "../itemFilter/ItemFilter";
+
+// Hooks
+import useContextProvider from "@/context/ContextProvider";
+import useOptionFilter from "./useOptionFilter";
 
 interface IProps {
   onClose: () => void;

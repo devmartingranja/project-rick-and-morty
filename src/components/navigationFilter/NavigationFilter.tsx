@@ -1,9 +1,8 @@
 "use client";
 
 // Components
-import CardCharacter from "../ui/cardCharacter/CardCharacter";
-import LoadingCustom from "../ui/loadingCustom/LoadingCustom";
 import Search from "../ui/search/Search";
+import LoadingCustom from "../ui/loadingCustom/LoadingCustom";
 import ListCharacters from "./components/ListCharacters";
 
 // Hooks

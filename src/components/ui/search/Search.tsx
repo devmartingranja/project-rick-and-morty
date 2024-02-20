@@ -1,7 +1,12 @@
-import Image from "next/image";
-import useSearch from "./useSearch";
-import OptionFilter from "./components/optionFilter/OptionFilter";
+// Libs
 import { useEffect } from "react";
+import Image from "next/image";
+
+// Components
+import OptionFilter from "./components/optionFilter/OptionFilter";
+
+// Hooks
+import useSearch from "./useSearch";
 
 interface IProps {
   onSearch: (values: {}) => void;
@@ -44,7 +49,7 @@ const Search = ({ onSearch }: IProps) => {
           alt="Return"
           width={24}
           height={24}
-          role="button"
+          className="cursor-pointer"
           onClick={toggleOptionFilter}
         />
       </div>

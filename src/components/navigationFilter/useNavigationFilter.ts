@@ -1,10 +1,14 @@
+// Libs
+import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { use, useEffect, useState } from "react";
-import { ICharacter } from "../detailCharacter/DetailCharacter.utils";
 import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { IResponse, query } from "./NavigationFilter.utils";
+
+// Hooks
 import useContextProvider from "@/context/ContextProvider";
-import { NetworkStatus } from "@apollo/client";
+
+// Utils
+import { IResponse, query } from "./NavigationFilter.utils";
+import { ICharacter } from "../detailCharacter/DetailCharacter.utils";
 
 const useNavigationFilter = () => {
   const { id: idCharacterSelected } = useParams();

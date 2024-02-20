@@ -1,7 +1,6 @@
-import { ICharacter } from "@/components/detailCharacter/DetailCharacter.utils";
-import { on } from "events";
 import Image from "next/image";
 import Link from "next/link";
+import { ICharacter } from "@/components/detailCharacter/DetailCharacter.utils";
 
 interface IProps extends ICharacter {
   isFavorite?: boolean;

@@ -7,7 +7,7 @@ import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 // Components
 import CardCharacterDetail from "../ui/cardCharacterDetail/CardCharacterDetail";
 
-// Context
+// Hooks
 import useContextProvider from "@/context/ContextProvider";
 
 // Utils
