@@ -10,7 +10,7 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: "https://rickandmortyapi.com/graphql",
+    uri: `${process.env.NEXT_PUBLIC_DOMAIN_API_GRAPHQL}${process.env.NEXT_PUBLIC_PATCH_API_GRAPHQL}`,
   });
 
   return new NextSSRApolloClient({

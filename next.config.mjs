@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['rickandmortyapi.com'],
+        domains: [process.env.NEXT_PUBLIC_DOMAIN_IMAGE],
     }
 };
 

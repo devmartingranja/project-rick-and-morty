@@ -20,11 +20,11 @@ const CardCharacter = ({
 }: IProps) => {
   return (
     <section
-      className={`w-full py-4 border-b-2 flex justify-between items-center overflow-hidden ${
-        isSelected && "rounded-md bg-pink-50"
+      className={`w-full py-4 border-b-2 flex justify-between items-center overflow-hidden lg:px-5 ${
+        isSelected && "rounded-md bg-primary-100 px-5 border-b-0 my-1"
       }`}
     >
-      <Link className="flex items-center w-full" href={`/dashboard/${id}`}>
+      <Link className="flex items-center w-full " href={`/dashboard/${id}`}>
         <Image
           src={image}
           alt={`Image the character ${name}`}
@@ -37,16 +37,18 @@ const CardCharacter = ({
           <p className="text-base text-gray-400">{species}</p>
         </div>
       </Link>
-      <Image
-        src={`/icons/${isFavorite ? "heart_active.svg" : "heart.svg"}`}
-        alt="Rick"
-        width={24}
-        height={24}
-        className="cursor-pointer"
-        onClick={() => {
-          onFavorite(!isFavorite);
-        }}
-      />
+      <div className={isSelected ? "bg-white p-1 rounded-2xl" : ""}>
+        <Image
+          src={`/icons/${isFavorite ? "heart_active.svg" : "heart.svg"}`}
+          alt="Rick"
+          width={24}
+          height={24}
+          className="cursor-pointer"
+          onClick={() => {
+            onFavorite(!isFavorite);
+          }}
+        />
+      </div>
     </section>
   );
 };

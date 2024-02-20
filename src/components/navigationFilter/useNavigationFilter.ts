@@ -2,13 +2,9 @@ import { useParams } from "next/navigation";
 import { use, useEffect, useState } from "react";
 import { ICharacter } from "../detailCharacter/DetailCharacter.utils";
 import { useQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import {
-  IResponse,
-  filterListCharacters,
-  getSortedListById,
-  query,
-} from "./NavigationFilter.utils";
+import { IResponse, query } from "./NavigationFilter.utils";
 import useContextProvider from "@/context/ContextProvider";
+import { NetworkStatus } from "@apollo/client";
 
 const useNavigationFilter = () => {
   const { id: idCharacterSelected } = useParams();
