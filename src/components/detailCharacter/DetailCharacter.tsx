@@ -17,6 +17,7 @@ const DetailCharacter = ({ id }: { id: string }) => {
   const {
     data: { character },
   } = useSuspenseQuery<IResponse>(query, { variables: { id } });
+
   const { listCharactersIdFavoritesProvider } = useContextProvider();
   const isFavorite = listCharactersIdFavoritesProvider.some(
     (id) => id === Number(character.id)
