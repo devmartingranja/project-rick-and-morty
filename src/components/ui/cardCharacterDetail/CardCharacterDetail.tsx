@@ -26,6 +26,7 @@ const CardCharacterDetail = ({
         />
         <div className="absolute right-[-15px] bottom-0 rounded-full bg-white overflow-hidden p-1">
           <Image
+            data-testid="test-id-img-favorite"
             src={`/icons/${isFavorite ? "heart_active.svg" : "heart.svg"}`}
             alt="Vercel Logo"
             className=" "
